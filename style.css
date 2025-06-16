@@ -6,6 +6,20 @@
   margin: 0;
   padding: 0;
 }
+*:focus-visible {
+  outline: 0.125rem solid var(--desaturated-red);
+}
+img,
+svg,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+input,
+button {
+  font: inherit;
+}
 :root {
   /* Color */
   --desaturated-red: hsl(0, 36%, 70%);
@@ -16,115 +30,131 @@
   --gradient-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   /* Font */
   --font-family: "Josefin Sans", sans-serif;
-  --fs-16: 16px;
-  --fs-64: 64px;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-40: 2.5rem;
+  --fs-64: 4rem;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
 }
 body {
   background: var(--gradient-1);
-  background-image: url(./images/bg-pattern-desktop.svg);
-  background-repeat: no-repeat;
-  background-size: 61% 139%;
   font-family: var(--font-family);
   font-size: var(--fs-16);
+  font-weight: var(--fw-400);
   color: var(--desaturated-red);
+  display: grid;
+  grid-auto-rows: max-content;
+  justify-content: center;
+  min-height: 100vh;
 }
 header {
-  margin-inline-start: 165px;
-  margin-block-start: 74.91px;
+  padding: 2rem;
 }
-.logo {
-  width: 158px;
-  height: 33px;
+.picture {
+  width: 100%;
+  height: 100%;
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 main {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 4rem;
+  padding: 0 2rem 2rem;
+  max-width: 24rem;
 }
-.container {
+.wrapper {
   display: flex;
   flex-direction: column;
-  gap: 136.09px;
-  margin-block-start: 74.91px;
-  margin-inline-start: 165px;
-  width: 31%;
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
 }
 .title {
-  font-size: var(--fs-64);
+  font-size: var(--fs-40);
+  font-weight: var(--fw-600);
+  line-height: 2.625rem;
+  letter-spacing: 0.6769rem;
   text-transform: uppercase;
-  letter-spacing: 17.32px;
   color: var(--dark-grayish-red);
-  line-height: 71px;
 }
-.title span {
-  font-weight: 300;
-  line-height: 64px;
+.title--red {
+  font-weight: var(--fw-300);
+  color: var(--desaturated-red);
 }
 .description {
-  line-height: 28px;
+  font-size: var(--fs-14);
+  line-height: 1.375rem;
 }
-form {
-  margin-top: 8px;
+.form {
+  width: 100%;
+}
+.sr-only:not(:focus):not(:active) {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.form__wrapper {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5rem auto;
+  gap: 0.5rem;
+  border-radius: 1.75rem;
+  border: 1px solid var(--desaturated-red);
 }
 .form__input {
+  background-color: transparent;
+  border: none;
   outline: none;
-  border-radius: 28px;
-  border: 1px solid var(--desaturated-red);
-  width: 345px;
-  height: 56px;
-  padding: 16px;
-  padding-left: 32px;
+  padding: 0 1.25rem;
+  min-width: 0;
+}
+.form__input::placeholder {
   color: var(--desaturated-red);
 }
 .error-icon {
-  position: relative;
-  top: 8px;
-  left: -85px;
+  width: 1.5rem;
+  height: 1.5rem;
+  justify-self: center;
+  align-self: center;
+  visibility: hidden;
 }
 .form__submit {
-  position: relative;
-  top: 3.5px;
-  left: -80px;
+  width: 4rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--gradient-2);
   border: none;
-  border-radius: 28px;
-  width: 90px;
-  height: 56px;
+  border-radius: 1.75rem;
+}
+.form__submit img {
+  width: 0.75rem;
+  height: 1.25rem;
 }
 .form__submit:hover {
   cursor: pointer;
-  background: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsla(0, 74%, 74%, 0.699) 100%);
+  background-image: linear-gradient(90deg, #f6d2d2, #f8bfbf);
 }
 .error-msg {
-  position: relative;
-  top: -30px;
-  left: 30px;
+  font-size: var(--fs-13);
   color: var(--soft-red);
-  font-size: 13px;
-  line-height: 28px;
-}
-.hidden {
+  text-align: left;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
   display: none;
-}
-.hero--desktop {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.hero--mobile {
-  display: none;
-}
-footer {
-  position: absolute;
-  left: 10px;
-  bottom: -45px;
 }
 .attribution {
-  font-size: 12px;
+  margin-top: 2rem;
+  font-size: var(--fs-14);
   text-align: center;
 }
 .attribution a {
