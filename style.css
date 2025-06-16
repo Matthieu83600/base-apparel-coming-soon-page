@@ -158,5 +158,47 @@ main {
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--dark-grayish-red);
+}
+@media (min-width: 64rem) {
+  body {
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: auto 1fr;
+    background: url(./images/bg-pattern-desktop.svg), var(--gradient-1);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 62%;
+    margin-inline-start: 10.3125rem;
+  }
+  header {
+    margin-block-start: 4.6819rem;
+  }
+  aside {
+    grid-column: 2;
+    grid-row: span 2;
+  }
+  main {
+    max-width: 27.8125rem;
+  }
+  .wrapper {
+    text-align: left;
+  }
+  .title {
+    font-size: var(--fs-64);
+    line-height: 4rem;
+    letter-spacing: 1.0825rem;
+  }
+  .title--red {
+    line-height: 4.4375rem;
+  }
+  .description {
+    font-size: var(--fs-16);
+    line-height: 1.75rem;
+  }
+  .form__wrapper {
+    margin-top: 1.4rem;
+  }
+  .attribution {
+    margin-top: -1.25rem;
+  }
 }
