@@ -1,3 +1,128 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* Color */
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  /* Gradients */
+  --gradient-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  /* Font */
+  --font-family: "Josefin Sans", sans-serif;
+  --fs-16: 16px;
+  --fs-64: 64px;
+}
+body {
+  background: var(--gradient-1);
+  background-image: url(./images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 61% 139%;
+  font-family: var(--font-family);
+  font-size: var(--fs-16);
+  color: var(--desaturated-red);
+}
+header {
+  margin-inline-start: 165px;
+  margin-block-start: 74.91px;
+}
+.logo {
+  width: 158px;
+  height: 33px;
+}
+main {
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 136.09px;
+  margin-block-start: 74.91px;
+  margin-inline-start: 165px;
+  width: 31%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.title {
+  font-size: var(--fs-64);
+  text-transform: uppercase;
+  letter-spacing: 17.32px;
+  color: var(--dark-grayish-red);
+  line-height: 71px;
+}
+.title span {
+  font-weight: 300;
+  line-height: 64px;
+}
+.description {
+  line-height: 28px;
+}
+form {
+  margin-top: 8px;
+}
+.form__input {
+  outline: none;
+  border-radius: 28px;
+  border: 1px solid var(--desaturated-red);
+  width: 345px;
+  height: 56px;
+  padding: 16px;
+  padding-left: 32px;
+  color: var(--desaturated-red);
+}
+.error-icon {
+  position: relative;
+  top: 8px;
+  left: -85px;
+}
+.form__submit {
+  position: relative;
+  top: 3.5px;
+  left: -80px;
+  background: var(--gradient-2);
+  border: none;
+  border-radius: 28px;
+  width: 90px;
+  height: 56px;
+}
+.form__submit:hover {
+  cursor: pointer;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsla(0, 74%, 74%, 0.699) 100%);
+}
+.error-msg {
+  position: relative;
+  top: -30px;
+  left: 30px;
+  color: var(--soft-red);
+  font-size: 13px;
+  line-height: 28px;
+}
+.hidden {
+  display: none;
+}
+.hero--desktop {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.hero--mobile {
+  display: none;
+}
+footer {
+  position: absolute;
+  left: 10px;
+  bottom: -45px;
+}
 .attribution {
   font-size: 12px;
   text-align: center;
